@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -34,6 +35,14 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
         etDescricao = findViewById(R.id.et_descricao);
         spinnerTipo = findViewById(R.id.spinner_tipo);
         btnSalvar = findViewById(R.id.btn_salvar);
+
+        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         // Preencher Data Atual
         String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,14 @@ public class ListarChamadosActivity extends AppCompatActivity {
         btnLimparFiltros = findViewById(R.id.btn_limpar_filtros);
         recyclerView = findViewById(R.id.recycler_chamados);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         String[] statusFiltro = new String[]{"Todos", "Aberto", "Em atendimento", "Concluído"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusFiltro);

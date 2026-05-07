@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,14 @@ public class AtenderChamadoActivity extends AppCompatActivity {
         spinnerStatus = findViewById(R.id.spinner_status_atendimento);
         etSolucao = findViewById(R.id.et_solucao);
         btnSalvar = findViewById(R.id.btn_salvar_atendimento);
+
+        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         String[] statusArray = new String[]{"Aberto", "Em atendimento", "Concluído"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusArray);
