@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/atender_chamado"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Detalhes do Chamado -->
+        <TextView
+            android:id="@+id/tv_detalhe_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tv_detalhe_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/tv_detalhe_descricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Área de Edição para o Técnico -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textColor="@color/gray"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_status_atendimento"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/teal_light"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/solucao"
+            android:textColor="@color/gray"
+            android:layout_marginBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_solucao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="4"
+            android:gravity="top|start"
+            android:hint="Descreva a solução do problema..."
+            android:textColorHint="@color/gray"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal_light"
+            android:layout_marginBottom="32dp" />
+
+        <Button
+            android:id="@+id/btn_salvar_atendimento"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/salvar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal" />
+
+    </LinearLayout>
+</ScrollView>

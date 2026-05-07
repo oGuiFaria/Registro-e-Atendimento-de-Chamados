@@ -1,0 +1,4 @@
+app/build/
+gradle-8.0/
+gradle-8.0-bin.zip
+.gradle/

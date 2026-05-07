@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">OG Produtora - Chamados</string>
+    <string name="sou_usuario">Sou Usuário</string>
+    <string name="sou_tecnico">Sou Técnico</string>
+    <string name="cadastrar_chamado">Cadastrar Chamado</string>
+    <string name="titulo">Título do problema</string>
+    <string name="data_cadastro">Data do cadastro (dd/mm/aaaa)</string>
+    <string name="descricao">Descrição</string>
+    <string name="local">Local</string>
+    <string name="tipo">Tipo</string>
+    <string name="salvar">Salvar</string>
+    <string name="listar_chamados">Chamados</string>
+    <string name="atender_chamado">Atendimento</string>
+    <string name="solucao">Solução</string>
+    <string name="status">Status</string>
+    <string name="filtrar">Filtrar</string>
+    <string name="limpar_filtros">Limpar Filtros</string>
+</resources>

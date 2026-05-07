@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/black"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OG PRODUTORA"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/teal"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suporte e Chamados"
+        android:textSize="18sp"
+        android:textColor="@color/gray"
+        android:layout_marginBottom="48dp" />
+
+    <Button
+        android:id="@+id/btn_sou_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/sou_usuario"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/teal_dark"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_sou_tecnico"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/sou_tecnico"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/gray_dark" />
+
+</LinearLayout>

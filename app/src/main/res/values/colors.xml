@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_dark">#FF333333</color>
+    <color name="gray_light">#FFEEEEEE</color>
+    <color name="gray">#FF888888</color>
+
+    <!-- Verde Água para os detalhes -->
+    <color name="teal_light">#FF4DB6AC</color>
+    <color name="teal">#FF009688</color>
+    <color name="teal_dark">#FF00796B</color>
+
+    <!-- Cores para status -->
+    <color name="status_aberto">#FFF44336</color> <!-- Red -->
+    <color name="status_em_atendimento">#FFFFC107</color> <!-- Amber -->
+    <color name="status_concluido">#FF4CAF50</color> <!-- Green -->
+</resources>
