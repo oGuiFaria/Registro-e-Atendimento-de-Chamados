@@ -91,6 +91,23 @@
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
             android:backgroundTint="@color/teal_light"
+            android:layout_marginBottom="16dp" />
+
+        <ImageView
+            android:id="@+id/iv_foto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_capturar_foto"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Capturar Foto"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/gray_dark"
             android:layout_marginBottom="32dp" />
 
         <Button

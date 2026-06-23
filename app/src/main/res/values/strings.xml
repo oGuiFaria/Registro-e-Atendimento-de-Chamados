@@ -15,4 +15,6 @@
     <string name="status">Status</string>
     <string name="filtrar">Filtrar</string>
     <string name="limpar_filtros">Limpar Filtros</string>
+    <string name="navigation_drawer_open">Abrir menu</string>
+    <string name="navigation_drawer_close">Fechar menu</string>
 </resources>
