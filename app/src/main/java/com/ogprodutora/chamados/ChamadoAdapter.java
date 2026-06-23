@@ -5,10 +5,13 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -42,6 +45,17 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ChamadoV
         holder.tvData.setText(chamado.getData());
         holder.tvTipo.setText(chamado.getTipo());
         holder.tvStatus.setText(chamado.getStatus());
+        holder.tvLocal.setText(chamado.getLocal());
+
+        if (chamado.getCaminhoImagem() != null && !chamado.getCaminhoImagem().isEmpty()) {
+            holder.ivFoto.setVisibility(View.VISIBLE);
+            Glide.with(context)
+                 .load(chamado.getCaminhoImagem())
+                 .centerCrop()
+                 .into(holder.ivFoto);
+        } else {
+            holder.ivFoto.setVisibility(View.GONE);
+        }
 
         // Colorir o status com base no valor
         if (chamado.getStatus().equals("Aberto")) {
@@ -71,7 +85,8 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ChamadoV
     }
 
     public static class ChamadoViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTitulo, tvData, tvTipo, tvStatus;
+        TextView tvTitulo, tvData, tvTipo, tvStatus, tvLocal;
+        ImageView ivFoto;
 
         public ChamadoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -79,6 +94,8 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ChamadoV
             tvData = itemView.findViewById(R.id.tv_item_data);
             tvTipo = itemView.findViewById(R.id.tv_item_tipo);
             tvStatus = itemView.findViewById(R.id.tv_item_status);
+            tvLocal = itemView.findViewById(R.id.tv_item_local);
+            ivFoto = itemView.findViewById(R.id.iv_item_foto);
         }
     }
 }

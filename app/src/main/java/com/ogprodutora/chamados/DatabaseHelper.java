@@ -12,7 +12,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "chamados.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public static final String TABLE_CHAMADOS = "chamados";
     public static final String COLUMN_ID = "id";
@@ -23,6 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COLUMN_TIPO = "tipo";
     public static final String COLUMN_STATUS = "status";
     public static final String COLUMN_SOLUCAO = "solucao";
+    public static final String COLUMN_CAMINHO_IMAGEM = "caminho_imagem";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,7 +39,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + COLUMN_LOCAL + " TEXT,"
                 + COLUMN_TIPO + " TEXT,"
                 + COLUMN_STATUS + " TEXT,"
-                + COLUMN_SOLUCAO + " TEXT"
+                + COLUMN_SOLUCAO + " TEXT,"
+                + COLUMN_CAMINHO_IMAGEM + " TEXT"
                 + ")";
         db.execSQL(CREATE_TABLE);
     }
@@ -59,6 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_TIPO, chamado.getTipo());
         values.put(COLUMN_STATUS, chamado.getStatus());
         values.put(COLUMN_SOLUCAO, chamado.getSolucao());
+        values.put(COLUMN_CAMINHO_IMAGEM, chamado.getCaminhoImagem());
 
         long id = db.insert(TABLE_CHAMADOS, null, values);
         db.close();
@@ -93,6 +96,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 chamado.setTipo(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_TIPO)));
                 chamado.setStatus(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_STATUS)));
                 chamado.setSolucao(cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_SOLUCAO)));
+
+                int imageIndex = cursor.getColumnIndex(COLUMN_CAMINHO_IMAGEM);
+                if (imageIndex != -1 && !cursor.isNull(imageIndex)) {
+                    chamado.setCaminhoImagem(cursor.getString(imageIndex));
+                }
+
                 chamadosList.add(chamado);
             } while (cursor.moveToNext());
         }
