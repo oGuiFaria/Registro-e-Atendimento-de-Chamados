@@ -13,9 +13,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class AtenderChamadoActivity extends AppCompatActivity {
+public class AtenderChamadoActivity extends BaseDrawerActivity {
 
     private TextView tvTitulo, tvInfo, tvDescricao;
     private Spinner spinnerStatus;
@@ -30,6 +29,7 @@ public class AtenderChamadoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_atender_chamado);
+        setTitle(getString(R.string.atender_chamado));
 
         db = new DatabaseHelper(this);
 
@@ -41,13 +41,7 @@ public class AtenderChamadoActivity extends AppCompatActivity {
         btnSalvar = findViewById(R.id.btn_salvar_atendimento);
         ivImagem = findViewById(R.id.iv_detalhe_imagem);
 
-        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         String[] statusArray = new String[]{"Aberto", "Em andamento", "Concluído"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusArray);

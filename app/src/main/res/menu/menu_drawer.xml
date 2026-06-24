@@ -6,7 +6,7 @@
         android:title="Novo Chamado" />
     <item
         android:id="@+id/nav_listar_chamados"
-        android:icon="@android:drawable/ic_menu_sort"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="Listagem de Chamados" />
     <item
         android:id="@+id/nav_estatisticas"

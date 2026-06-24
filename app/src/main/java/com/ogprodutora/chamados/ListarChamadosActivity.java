@@ -9,14 +9,13 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListarChamadosActivity extends AppCompatActivity {
+public class ListarChamadosActivity extends BaseDrawerActivity {
 
     private RecyclerView recyclerView;
     private ChamadoAdapter adapter;
@@ -30,6 +29,7 @@ public class ListarChamadosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_chamados);
+        setTitle(getString(R.string.listar_chamados));
 
         db = new DatabaseHelper(this);
 
@@ -40,13 +40,7 @@ public class ListarChamadosActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_chamados);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         String[] statusFiltro = new String[]{"Todos", "Aberto", "Em andamento", "Concluído"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusFiltro);

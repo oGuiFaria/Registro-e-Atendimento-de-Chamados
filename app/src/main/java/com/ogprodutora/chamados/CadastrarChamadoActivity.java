@@ -17,13 +17,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.parse.ParseException;
 import com.parse.SaveCallback;
+import com.parse.ParseFile;
+import java.io.ByteArrayOutputStream;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,7 +32,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class CadastrarChamadoActivity extends AppCompatActivity {
+public class CadastrarChamadoActivity extends BaseDrawerActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_CAMERA_PERMISSION = 2;
@@ -47,6 +48,7 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_chamado);
+        setTitle(getString(R.string.cadastrar_chamado));
 
         db = new DatabaseHelper(this);
 
@@ -72,13 +74,7 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
             }
         }
 
-        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
         etData.setText(currentDate);
@@ -216,7 +212,7 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
         }
     }
 
-    private void sincronizarComNuvem(Chamado chamado) {
+        private void sincronizarComNuvem(Chamado chamado) {
         ChamadoParse chamadoParse = new ChamadoParse();
         chamadoParse.setTitulo(chamado.getTitulo());
         chamadoParse.setDescricao(chamado.getDescricao());
@@ -226,9 +222,22 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
 
         String nomeArquivo = chamado.getImagePath();
         if (nomeArquivo != null) {
-            nomeArquivo = nomeArquivo.substring(nomeArquivo.lastIndexOf("/") + 1);
+            String shortNome = nomeArquivo.substring(nomeArquivo.lastIndexOf("/") + 1);
+            chamadoParse.setImagemNome(shortNome);
+
+            try {
+                Bitmap bitmap = BitmapFactory.decodeFile(nomeArquivo);
+                if(bitmap != null) {
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream);
+                    byte[] imageBytes = stream.toByteArray();
+                    ParseFile file = new ParseFile(shortNome, imageBytes);
+                    chamadoParse.put("arquivoImagem", file);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        chamadoParse.setImagemNome(nomeArquivo);
 
         chamadoParse.saveInBackground(new SaveCallback() {
             @Override

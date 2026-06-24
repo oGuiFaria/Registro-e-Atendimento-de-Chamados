@@ -23,8 +23,8 @@
     <string name="chamados_andamento">Em Andamento</string>
     <string name="chamados_concluidos">Concluídos</string>
     <string name="app_descricao">Sistema corporativo para registro, acompanhamento e controle de métricas de chamados de infraestrutura e TI. Desenvolvido como trabalho acadêmico para a disciplina de Engenharia de Computação.</string>
-    <string name="integrantes">Celso Augusto de Oliveira Junior e demais membros</string>
-    <string name="turma">Engenharia de Computação - IFSULDEMINAS</string>
+    <string name="integrantes">Guilherme Faria</string>
+    <string name="turma">Engenharia da Computação</string>
     <string name="sem_imagem">Sem imagem</string>
     <string name="erro_camera">Erro ao acessar a câmera</string>
     <string name="erro_parse">Erro ao sincronizar com a nuvem</string>

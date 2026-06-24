@@ -5,22 +5,16 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class SobreActivity extends AppCompatActivity {
+public class SobreActivity extends BaseDrawerActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sobre);
+        setTitle(getString(R.string.sobre_sistema));
 
-        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         TextView tvAppNome = findViewById(R.id.tv_sobre_app_nome);
         TextView tvIntegrantes = findViewById(R.id.tv_sobre_integrantes);
