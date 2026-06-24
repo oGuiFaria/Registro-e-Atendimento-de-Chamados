@@ -16,8 +16,8 @@ public class ParseApplication extends Application {
         ParseObject.registerSubclass(ChamadoParse.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("SEU_APPLICATION_ID") // Substitua pelo seu Application ID
-                .clientKey("SEU_CLIENT_KEY")         // Substitua pelo seu Client Key
+                .applicationId("gAfIX5xLxvVEz1910PdBNGhPQ1Zs9TeTar3PnHlt") // Substitua pelo seu Application ID
+                .clientKey("HynTVrB36jRFnFaGTqN5UWsH2R9cNLNmHa10xUBG")         // Substitua pelo seu Client Key
                 .server("https://parseapi.back4app.com")
                 .build()
         );
