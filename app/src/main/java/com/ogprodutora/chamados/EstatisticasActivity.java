@@ -5,9 +5,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class EstatisticasActivity extends AppCompatActivity {
+public class EstatisticasActivity extends BaseDrawerActivity {
 
     private TextView tvTotal, tvAbertos, tvAndamento, tvConcluidos;
     private DatabaseHelper db;
@@ -16,6 +15,7 @@ public class EstatisticasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estatisticas);
+        setTitle(getString(R.string.estatisticas));
 
         db = new DatabaseHelper(this);
 
@@ -24,13 +24,7 @@ public class EstatisticasActivity extends AppCompatActivity {
         tvAndamento = findViewById(R.id.tv_andamento_valor);
         tvConcluidos = findViewById(R.id.tv_concluidos_valor);
 
-        ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         carregarEstatisticas();
     }

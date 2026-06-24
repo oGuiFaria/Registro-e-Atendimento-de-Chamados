@@ -11,31 +11,7 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
 
-            <ImageButton
-                android:id="@+id/btn_voltar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@android:drawable/ic_menu_revert"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="Voltar"
-                app:tint="@color/teal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/atender_chamado"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:textColor="@color/teal"
-                android:layout_marginStart="8dp" />
-        </LinearLayout>
 
         <TextView
             android:id="@+id/tv_detalhe_titulo"
