@@ -11,11 +11,12 @@ public class Chamado implements Serializable {
     private String tipo;
     private String status;
     private String solucao;
+    private String imagePath;
 
     public Chamado() {
     }
 
-    public Chamado(int id, String titulo, String data, String descricao, String local, String tipo, String status, String solucao) {
+    public Chamado(int id, String titulo, String data, String descricao, String local, String tipo, String status, String solucao, String imagePath) {
         this.id = id;
         this.titulo = titulo;
         this.data = data;
@@ -24,6 +25,7 @@ public class Chamado implements Serializable {
         this.tipo = tipo;
         this.status = status;
         this.solucao = solucao;
+        this.imagePath = imagePath;
     }
 
     public int getId() { return id; }
@@ -49,4 +51,7 @@ public class Chamado implements Serializable {
 
     public String getSolucao() { return solucao; }
     public void setSolucao(String solucao) { this.solucao = solucao; }
+
+    public String getImagePath() { return imagePath; }
+    public void setImagePath(String imagePath) { this.imagePath = imagePath; }
 }

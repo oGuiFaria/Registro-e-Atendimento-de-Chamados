@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="32dp">
 
             <ImageButton
                 android:id="@+id/btn_voltar"
@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/atender_chamado"
+                android:text="@string/sobre_sistema"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/teal"
@@ -38,78 +38,70 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_detalhe_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aplicativo"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_sobre_app_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="24dp" />
 
         <TextView
-            android:id="@+id/tv_detalhe_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Integrantes"
             android:textColor="@color/gray"
             android:textSize="14sp"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="4dp" />
 
         <TextView
-            android:id="@+id/tv_detalhe_descricao"
+            android:id="@+id/tv_sobre_integrantes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:layout_marginBottom="16dp" />
-
-        <ImageView
-            android:id="@+id/iv_detalhe_imagem"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:visibility="gone"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="24dp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/status"
-            android:textColor="@color/gray"
-            android:layout_marginBottom="4dp" />
-
-        <Spinner
-            android:id="@+id/spinner_status_atendimento"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/teal_light"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="wrap_content"
+            android:text="Turma"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="4dp" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_sobre_turma"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/solucao"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descrição"
             android:textColor="@color/gray"
+            android:textSize="14sp"
             android:layout_marginBottom="4dp" />
 
-        <EditText
-            android:id="@+id/et_solucao"
+        <TextView
+            android:id="@+id/tv_sobre_descricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minLines="4"
-            android:gravity="top|start"
-            android:hint="Descreva a solução do problema..."
-            android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:backgroundTint="@color/teal_light"
-            android:layout_marginBottom="32dp" />
-
-        <Button
-            android:id="@+id/btn_salvar_atendimento"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/salvar"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/teal" />
+            android:textSize="14sp"
+            android:layout_marginBottom="24dp"
+            android:lineSpacingExtra="4dp" />
 
     </LinearLayout>
 </ScrollView>

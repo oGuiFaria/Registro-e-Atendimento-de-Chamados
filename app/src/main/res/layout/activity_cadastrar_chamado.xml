@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Novo Chamado"
+                android:text="@string/cadastrar_chamado"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/teal"
@@ -81,6 +81,20 @@
             android:backgroundTint="@color/teal_light"
             android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textColor="@color/gray"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_status"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/teal_light"
+            android:layout_marginBottom="16dp" />
+
         <EditText
             android:id="@+id/et_descricao"
             android:layout_width="match_parent"
@@ -91,7 +105,24 @@
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
             android:backgroundTint="@color/teal_light"
-            android:layout_marginBottom="32dp" />
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btn_camera"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/capturar_imagem"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal_dark"
+            android:layout_marginBottom="8dp" />
+
+        <ImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp" />
 
         <Button
             android:id="@+id/btn_salvar"

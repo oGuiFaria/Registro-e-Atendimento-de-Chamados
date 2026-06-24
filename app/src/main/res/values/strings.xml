@@ -1,18 +1,34 @@
 <resources>
-    <string name="app_name">OG Produtora - Chamados</string>
+    <string name="app_name">Service Desk Corp</string>
     <string name="sou_usuario">Sou Usuário</string>
     <string name="sou_tecnico">Sou Técnico</string>
-    <string name="cadastrar_chamado">Cadastrar Chamado</string>
+    <string name="cadastrar_chamado">Novo Chamado</string>
     <string name="titulo">Título do problema</string>
     <string name="data_cadastro">Data do cadastro (dd/mm/aaaa)</string>
     <string name="descricao">Descrição</string>
     <string name="local">Local</string>
     <string name="tipo">Tipo</string>
     <string name="salvar">Salvar</string>
-    <string name="listar_chamados">Chamados</string>
+    <string name="listar_chamados">Listagem de Chamados</string>
     <string name="atender_chamado">Atendimento</string>
     <string name="solucao">Solução</string>
     <string name="status">Status</string>
     <string name="filtrar">Filtrar</string>
     <string name="limpar_filtros">Limpar Filtros</string>
+    <string name="capturar_imagem">Capturar Imagem</string>
+    <string name="estatisticas">Estatísticas</string>
+    <string name="sobre_sistema">Sobre o Sistema</string>
+    <string name="total_chamados">Total de Chamados</string>
+    <string name="chamados_abertos">Chamados Abertos</string>
+    <string name="chamados_andamento">Em Andamento</string>
+    <string name="chamados_concluidos">Concluídos</string>
+    <string name="app_descricao">Sistema corporativo para registro, acompanhamento e controle de métricas de chamados de infraestrutura e TI. Desenvolvido como trabalho acadêmico para a disciplina de Engenharia de Computação.</string>
+    <string name="integrantes">Celso Augusto de Oliveira Junior e demais membros</string>
+    <string name="turma">Engenharia de Computação - IFSULDEMINAS</string>
+    <string name="sem_imagem">Sem imagem</string>
+    <string name="erro_camera">Erro ao acessar a câmera</string>
+    <string name="erro_parse">Erro ao sincronizar com a nuvem</string>
+    <string name="sucesso_parse">Dados sincronizados com a nuvem</string>
+    <string name="navigation_drawer_open">Abrir navegação</string>
+    <string name="navigation_drawer_close">Fechar navegação</string>
 </resources>

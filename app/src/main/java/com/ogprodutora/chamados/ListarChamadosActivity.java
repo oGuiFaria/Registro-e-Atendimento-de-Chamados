@@ -48,7 +48,7 @@ public class ListarChamadosActivity extends AppCompatActivity {
             }
         });
 
-        String[] statusFiltro = new String[]{"Todos", "Aberto", "Em atendimento", "Concluído"};
+        String[] statusFiltro = new String[]{"Todos", "Aberto", "Em andamento", "Concluído"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusFiltro);
         spinnerFiltroStatus.setAdapter(spinnerAdapter);
 

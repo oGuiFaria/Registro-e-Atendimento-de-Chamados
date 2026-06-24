@@ -15,4 +15,10 @@
     <color name="status_aberto">#FFF44336</color> <!-- Red -->
     <color name="status_em_atendimento">#FFFFC107</color> <!-- Amber -->
     <color name="status_concluido">#FF4CAF50</color> <!-- Green -->
+
+    <!-- Cores para o Dashboard -->
+    <color name="card_total">#FF009688</color>
+    <color name="card_aberto">#FFF44336</color>
+    <color name="card_andamento">#FFFFC107</color>
+    <color name="card_concluido">#FF4CAF50</color>
 </resources>

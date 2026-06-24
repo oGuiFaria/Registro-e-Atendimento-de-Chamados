@@ -1,13 +1,16 @@
 package com.ogprodutora.chamados;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -39,17 +42,28 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ChamadoV
     public void onBindViewHolder(@NonNull ChamadoViewHolder holder, int position) {
         Chamado chamado = chamadoList.get(position);
         holder.tvTitulo.setText(chamado.getTitulo());
-        holder.tvData.setText(chamado.getData());
-        holder.tvTipo.setText(chamado.getTipo());
+        holder.tvLocal.setText(chamado.getLocal());
         holder.tvStatus.setText(chamado.getStatus());
 
-        // Colorir o status com base no valor
-        if (chamado.getStatus().equals("Aberto")) {
-            holder.tvStatus.setTextColor(context.getResources().getColor(R.color.status_aberto, null));
-        } else if (chamado.getStatus().equals("Em atendimento")) {
-            holder.tvStatus.setTextColor(context.getResources().getColor(R.color.status_em_atendimento, null));
-        } else if (chamado.getStatus().equals("Concluído")) {
-            holder.tvStatus.setTextColor(context.getResources().getColor(R.color.status_concluido, null));
+        String status = chamado.getStatus();
+        if ("Aberto".equals(status)) {
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.status_aberto));
+        } else if ("Em andamento".equals(status)) {
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.status_em_atendimento));
+        } else if ("Concluído".equals(status)) {
+            holder.tvStatus.setTextColor(ContextCompat.getColor(context, R.color.status_concluido));
+        }
+
+        if (chamado.getImagePath() != null && !chamado.getImagePath().isEmpty()) {
+            Bitmap bitmap = BitmapFactory.decodeFile(chamado.getImagePath());
+            if (bitmap != null) {
+                holder.ivThumbnail.setImageBitmap(bitmap);
+                holder.ivThumbnail.setVisibility(View.VISIBLE);
+            } else {
+                holder.ivThumbnail.setVisibility(View.GONE);
+            }
+        } else {
+            holder.ivThumbnail.setVisibility(View.GONE);
         }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -71,14 +85,15 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ChamadoV
     }
 
     public static class ChamadoViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTitulo, tvData, tvTipo, tvStatus;
+        TextView tvTitulo, tvLocal, tvStatus;
+        ImageView ivThumbnail;
 
         public ChamadoViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitulo = itemView.findViewById(R.id.tv_item_titulo);
-            tvData = itemView.findViewById(R.id.tv_item_data);
-            tvTipo = itemView.findViewById(R.id.tv_item_tipo);
+            tvLocal = itemView.findViewById(R.id.tv_item_local);
             tvStatus = itemView.findViewById(R.id.tv_item_status);
+            ivThumbnail = itemView.findViewById(R.id.iv_item_thumbnail);
         }
     }
 }
