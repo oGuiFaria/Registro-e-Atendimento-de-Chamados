@@ -66,12 +66,7 @@ public class ChamadoAdapter extends RecyclerView.Adapter<ChamadoAdapter.ChamadoV
             holder.ivThumbnail.setVisibility(View.GONE);
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick(chamado);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> listener.onItemClick(chamado));
     }
 
     @Override

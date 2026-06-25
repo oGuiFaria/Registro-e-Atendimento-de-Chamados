@@ -1,7 +1,6 @@
 package com.ogprodutora.chamados;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -25,12 +24,7 @@ public class EstatisticasActivity extends AppCompatActivity {
         tvConcluidos = findViewById(R.id.tv_concluidos_valor);
 
         ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(v -> finish());
 
         carregarEstatisticas();
     }

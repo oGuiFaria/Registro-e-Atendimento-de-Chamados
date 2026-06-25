@@ -42,12 +42,7 @@ public class AtenderChamadoActivity extends AppCompatActivity {
         ivImagem = findViewById(R.id.iv_detalhe_imagem);
 
         ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(v -> finish());
 
         String[] statusArray = new String[]{"Aberto", "Em andamento", "Concluído"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusArray);
@@ -81,12 +76,7 @@ public class AtenderChamadoActivity extends AppCompatActivity {
             }
         }
 
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                atualizarChamado();
-            }
-        });
+        btnSalvar.setOnClickListener(v -> atualizarChamado());
     }
 
     private void atualizarChamado() {

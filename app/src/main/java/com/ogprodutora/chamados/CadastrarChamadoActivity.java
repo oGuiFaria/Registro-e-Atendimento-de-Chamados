@@ -73,12 +73,7 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
         }
 
         ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(v -> finish());
 
         String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
         etData.setText(currentDate);
@@ -91,19 +86,9 @@ public class CadastrarChamadoActivity extends AppCompatActivity {
         ArrayAdapter<String> statusAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusArray);
         spinnerStatus.setAdapter(statusAdapter);
 
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dispatchTakePictureIntent();
-            }
-        });
+        btnCamera.setOnClickListener(v -> dispatchTakePictureIntent());
 
-        btnSalvar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                salvarChamado();
-            }
-        });
+        btnSalvar.setOnClickListener(v -> salvarChamado());
     }
 
     @Override

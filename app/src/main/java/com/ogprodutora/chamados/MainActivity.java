@@ -2,7 +2,6 @@ package com.ogprodutora.chamados;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -38,36 +37,25 @@ public class MainActivity extends AppCompatActivity {
         Button btnSouUsuario = findViewById(R.id.btn_sou_usuario);
         Button btnSouTecnico = findViewById(R.id.btn_sou_tecnico);
 
-        btnSouUsuario.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btnSouUsuario.setOnClickListener(v -> 
+                startActivity(new Intent(MainActivity.this, CadastrarChamadoActivity.class)));
+
+        btnSouTecnico.setOnClickListener(v -> 
+                startActivity(new Intent(MainActivity.this, ListarChamadosActivity.class)));
+
+        navigationView.setNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
+            if (id == R.id.nav_novo_chamado) {
                 startActivity(new Intent(MainActivity.this, CadastrarChamadoActivity.class));
-            }
-        });
-
-        btnSouTecnico.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            } else if (id == R.id.nav_listar_chamados) {
                 startActivity(new Intent(MainActivity.this, ListarChamadosActivity.class));
+            } else if (id == R.id.nav_estatisticas) {
+                startActivity(new Intent(MainActivity.this, EstatisticasActivity.class));
+            } else if (id == R.id.nav_sobre) {
+                startActivity(new Intent(MainActivity.this, SobreActivity.class));
             }
-        });
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                int id = item.getItemId();
-                if (id == R.id.nav_novo_chamado) {
-                    startActivity(new Intent(MainActivity.this, CadastrarChamadoActivity.class));
-                } else if (id == R.id.nav_listar_chamados) {
-                    startActivity(new Intent(MainActivity.this, ListarChamadosActivity.class));
-                } else if (id == R.id.nav_estatisticas) {
-                    startActivity(new Intent(MainActivity.this, EstatisticasActivity.class));
-                } else if (id == R.id.nav_sobre) {
-                    startActivity(new Intent(MainActivity.this, SobreActivity.class));
-                }
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
+            drawerLayout.closeDrawer(GravityCompat.START);
+            return true;
         });
     }
 

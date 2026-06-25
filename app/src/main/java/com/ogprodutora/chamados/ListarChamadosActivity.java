@@ -2,7 +2,6 @@ package com.ogprodutora.chamados;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,12 +40,7 @@ public class ListarChamadosActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(v -> finish());
 
         String[] statusFiltro = new String[]{"Todos", "Aberto", "Em andamento", "Concluído"};
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, statusFiltro);
@@ -54,20 +48,12 @@ public class ListarChamadosActivity extends AppCompatActivity {
 
         carregarChamados();
 
-        btnFiltrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                aplicarFiltros();
-            }
-        });
+        btnFiltrar.setOnClickListener(v -> aplicarFiltros());
 
-        btnLimparFiltros.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                etFiltroData.setText("");
-                spinnerFiltroStatus.setSelection(0);
-                adapter.updateList(todosChamados);
-            }
+        btnLimparFiltros.setOnClickListener(v -> {
+            etFiltroData.setText("");
+            spinnerFiltroStatus.setSelection(0);
+            adapter.updateList(todosChamados);
         });
     }
 
@@ -79,13 +65,10 @@ public class ListarChamadosActivity extends AppCompatActivity {
 
     private void carregarChamados() {
         todosChamados = db.getAllChamados();
-        adapter = new ChamadoAdapter(this, todosChamados, new ChamadoAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Chamado chamado) {
-                Intent intent = new Intent(ListarChamadosActivity.this, AtenderChamadoActivity.class);
-                intent.putExtra("CHAMADO", chamado);
-                startActivity(intent);
-            }
+        adapter = new ChamadoAdapter(this, todosChamados, chamado -> {
+            Intent intent = new Intent(ListarChamadosActivity.this, AtenderChamadoActivity.class);
+            intent.putExtra("CHAMADO", chamado);
+            startActivity(intent);
         });
         recyclerView.setAdapter(adapter);
     }

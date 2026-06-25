@@ -1,7 +1,6 @@
 package com.ogprodutora.chamados;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -15,12 +14,7 @@ public class SobreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sobre);
 
         ImageButton btnVoltar = findViewById(R.id.btn_voltar);
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        btnVoltar.setOnClickListener(v -> finish());
 
         TextView tvAppNome = findViewById(R.id.tv_sobre_app_nome);
         TextView tvIntegrantes = findViewById(R.id.tv_sobre_integrantes);
